@@ -1,88 +1,248 @@
+:root {
+    --primary: #6366f1;
+    /* 메인 인디고 블루 */
+    --primary-glow: rgba(99, 102, 241, 0.2);
+    --bg-base: #f1f5f9;
+    /* 전체 배경색 */
+    --bg-container: #ffffff;
+    /* 컨테이너 배경색 */
+    --card-inner: #f8fafc;
+    /* 카드 내부 기본색 */
+    --text-main: #1e293b;
+    /* 진한 텍스트 */
+    --text-sub: #475569;
+    /* 부드러운 텍스트 */
+    --border: #e2e8f0;
+    /* 구분선 색상 */
+    --accent-bg: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
 body {
-    background: #f4f5f7;
-    font-family: Arial, sans-serif;
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+    font-family: 'Pretendard', sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    padding: 60px 20px;
+    line-height: 1.6;
 }
 
 .container {
-    width: 900px;
+    max-width: 850px;
     margin: auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
+    background: var(--bg-container);
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
 }
 
-h2 {
-    margin-top: 40px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
+/* 🌟 공통 카드 스타일 */
+.card {
+    background: var(--card-inner);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
 }
 
-/* 👤 profile */
+/* 🌟 마우스 호버 효과: 확대 + 배경 반전 + 글로우 */
+.glow-card:hover {
+    background: #ffffff !important;
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px var(--primary-glow);
+}
+
+/* 호버 시 텍스트 가시성 보장 */
+.glow-card:hover h1,
+.glow-card:hover h3,
+.glow-card:hover p,
+.glow-card:hover li,
+.glow-card:hover span {
+    color: var(--text-main) !important;
+}
+
+/* 👤 PROFILE */
 .profile {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
 }
 
 .avatar {
-    width: 90px;
-    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border-radius: 35px;
+    background: var(--accent-bg);
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 31px;
 }
 
 .role {
-    color: #777;
-}
-
-.headline {
-    margin-top: 8px;
-}
-
-.badge-wrap {
-    margin-top: 10px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: var(--accent-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .badge {
-    background: #eef2ff;
-    padding: 5px 10px;
-    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: var(--text-sub);
     margin-right: 6px;
-    font-size: 12px;
+    font-weight: 500;
 }
 
-/* 🧠 skills */
+/* 🧠 SKILL GRID */
 .skill-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.card {
-    flex: 1;
-    background: #f8f9ff;
-    padding: 20px;
-    border-radius: 10px;
-    transition: 0.2s;
+.skill-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
 }
 
-.card:hover {
-    transform: translateY(-4px);
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--text-sub);
 }
 
-/* 🚀 project */
+/* 🚀 PROJECT CARD (반전 가독성 수정 완료) */
 .project-card {
-    border-left: 4px solid #6c7cff;
-    background: #fafaff;
-    padding: 20px;
-    border-radius: 10px;
+    background: #1e293b;
+    border: none;
 }
 
-.project-header {
+.project-card h3 {
+    color: #ffffff;
+}
+
+.project-card .date,
+.project-card .details {
+    color: #94a3b8;
+}
+
+.project-card .summary {
+    color: #818cf8;
+    font-weight: 600;
+}
+
+.project-card:hover h3 {
+    color: var(--text-main) !important;
+}
+
+.project-card:hover .date,
+.project-card:hover .details {
+    color: var(--text-sub) !important;
+}
+
+.project-card:hover .summary {
+    color: var(--primary) !important;
+}
+
+/* 📈 EXPERIENCE & CONNECT 구분선 스타일 */
+.section-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    margin: 60px 0 25px;
+    font-weight: 800;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* 📈 growth */
-.growth {
-    background: #f6f6f6;
-    padding: 20px;
-    border-radius: 10px;
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* 📩 CONTACT (반전 가독성 수정 완료) */
+.contact {
+    background: var(--accent-bg);
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.contact-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact .line {
+    background: rgba(255, 255, 255, 0.3);
+    width: 1px;
+    height: 15px;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px dashed white;
+}
+
+.contact:hover {
+    color: var(--text-main) !important;
+}
+
+.contact:hover a {
+    color: var(--primary) !important;
+    border-bottom-color: var(--primary);
+}
+
+.contact:hover .line {
+    background: var(--border);
+}
+
+/* 반응형 */
+@media (max-width: 650px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact .line {
+        display: none;
+    }
 }

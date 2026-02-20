@@ -3,106 +3,104 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박은수 포트폴리오</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
-
-        <!-- 👤 PROFILE -->
-        <section class="profile">
-            <img src="profile.png" class="avatar">
-
+        <section class="profile card glow-card">
+            <div class="avatar">
+                <img src="profile.jpg" alt="박은수">
+            </div>
             <div class="intro">
                 <h1>박은수</h1>
                 <p class="role">Front-End Developer</p>
-
                 <p class="headline">
-                    이미지를 이해하고 사용자 경험을 구현하는 개발자를 목표로 합니다.
+                    작은 기능이라도 실제로 동작하고 배포되는 서비스를 만드는 과정을 중요하게 생각합니다.
+                    HTML/CSS 기반 UI 제작부터 FastAPI 개발, LLM 활용까지 웹 서비스 전반의 흐름을 이해하고자 노력합니다.
                 </p>
-
                 <div class="badge-wrap">
+                    <span class="badge">HTML / CSS</span>
                     <span class="badge">FastAPI</span>
                     <span class="badge">LLM</span>
-                    <span class="badge">Deploy 경험</span>
+                    <span class="badge">Deploy</span>
                 </div>
             </div>
         </section>
 
-
-        <!-- 🧠 SKILLS -->
-        <section>
-            <h2>기술 스택</h2>
-
+        <section class="content-section">
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skill-grid">
-
-                <div class="card">
-                    <h3>HTML — 구조 설계</h3>
+                <div class="card skill-card glow-card">
+                    <h3>HTML / CSS</h3>
                     <ul>
-                        <li>시맨틱 마크업</li>
-                        <li>접근성 고려 구조</li>
+                        <li>시맨틱 마크업 기반 UI 구조 설계</li>
+                        <li>Flex / Grid 레이아웃 및 카드형 UI</li>
                     </ul>
                 </div>
-
-                <div class="card">
-                    <h3>CSS — UI 구현</h3>
+                <div class="card skill-card glow-card">
+                    <h3>Python / FastAPI</h3>
                     <ul>
-                        <li>Flex/Grid 레이아웃</li>
-                        <li>카드형 UI 제작</li>
+                        <li>REST API 서버 개발</li>
+                        <li>이미지 기반 추천 로직 구현</li>
                     </ul>
                 </div>
-
+                <div class="card skill-card glow-card">
+                    <h3>AI / LLM</h3>
+                    <ul>
+                        <li>프롬프트 구조 개선 경험</li>
+                        <li>추천 정확도 개선 시도</li>
+                    </ul>
+                </div>
+                <div class="card skill-card glow-card">
+                    <h3>Deploy / Collaboration</h3>
+                    <ul>
+                        <li>Vercel / Render 배포</li>
+                        <li>GitHub 기반 협업 및 CI/CD</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-
-        <!-- 🚀 PROJECT -->
-        <section>
-            <h2>프로젝트</h2>
-
-            <div class="project-card">
-
+        <section class="content-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-card card glow-card">
                 <div class="project-header">
                     <h3>AI 코디 추천 웹 서비스</h3>
-                    <span>2026.01 - 2026.02</span>
+                    <span class="date">2026.01 - 2026.02 (팀 프로젝트)</span>
                 </div>
-
-                <p class="problem">
-                    📌 이미지 기반 코디 추천 정확도 개선을 목표로 개발
-                </p>
-
-                <ul>
-                    <li>FastAPI API 서버 개발</li>
-                    <li>이미지 추천 로직 구현</li>
-                    <li>LLM 프롬프트 개선</li>
+                <p class="summary">이미지 기반 코디 추천 정확도 개선 프로젝트</p>
+                <ul class="details">
+                    <li>Python FastAPI API 서버 개발</li>
+                    <li>이미지 추천 로직 구현 및 LLM 프롬프트 개선</li>
                 </ul>
-
-            </div>
-
-        </section>
-
-
-        <!-- 📈 GROWTH (차별화 핵심) -->
-        <section>
-            <h2>성장 경험</h2>
-
-            <div class="growth">
-                <p>• FastAPI 서버 구조 이해</p>
-                <p>• 프론트/백 분리 배포 경험</p>
-                <p>• LLM 응답 정확도 개선</p>
             </div>
         </section>
 
-
-        <!-- 📩 CONTACT -->
-        <section>
-            <h2>연락처</h2>
-            <p>이메일 : pes010622@naver.com</p>
-            <p>Github : https://github.com/dmstn320-codedede</p>
+        <section class="content-section">
+            <h2 class="section-title">Experience</h2>
+            <div class="growth card glow-card">
+                <p>• FastAPI 서버 구조 이해 및 API 설계 경험</p>
+                <p>• 프론트/백 분리 배포 경험 (Vercel + Render)</p>
+                <p>• LLM 응답 개선을 위한 반복 테스트 진행</p>
+            </div>
         </section>
 
+        <section class="content-section">
+            <h2 class="section-title">Connect</h2>
+            <footer class="contact card glow-card">
+                <div class="contact-inner">
+                    <p>pes010622@naver.com</p>
+                    <div class="line"></div>
+                    <p><a href="https://github.com/dmstn320-codedede" target="_blank">MY Github</a></p>
+                </div>
+            </footer>
+        </section>
     </div>
 
 </body>
