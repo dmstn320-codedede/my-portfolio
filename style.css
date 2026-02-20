@@ -1,0 +1,88 @@
+body {
+    background: #f4f5f7;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+h2 {
+    margin-top: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+/* 👤 profile */
+.profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.avatar {
+    width: 90px;
+    border-radius: 50%;
+}
+
+.role {
+    color: #777;
+}
+
+.headline {
+    margin-top: 8px;
+}
+
+.badge-wrap {
+    margin-top: 10px;
+}
+
+.badge {
+    background: #eef2ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+/* 🧠 skills */
+.skill-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #f8f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* 🚀 project */
+.project-card {
+    border-left: 4px solid #6c7cff;
+    background: #fafaff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 📈 growth */
+.growth {
+    background: #f6f6f6;
+    padding: 20px;
+    border-radius: 10px;
+}
